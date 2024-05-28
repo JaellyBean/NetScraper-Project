@@ -10,7 +10,7 @@ func main() {
 	// Instantiate default collector
 	c := colly.NewCollector(
 		// Visit only domains: hackerspaces.org, wiki.hackerspaces.org
-		colly.AllowedDomains("hackerspaces.org", "wiki.hackerspaces.org", "worldbelowbrewing.com"),
+		colly.AllowedDomains("https://worldbelowbrewing.com"),
 	)
 
 	// On every a element which has href attribute call callback
@@ -28,6 +28,6 @@ func main() {
 		fmt.Println("Visiting", r.URL.String())
 	})
 
-	// Start scraping on https://hackerspaces.org
-	c.Visit("https://hackerspaces.org/")
+	// Start scraping on https://worldbelowbrewing.com
+	c.Visit("https://worldbelowbrewing.com")
 }
